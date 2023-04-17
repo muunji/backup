@@ -1,0 +1,249 @@
+@charset "utf-8";
+@font-face {
+    font-family: Jamsil1;
+    src: url(../webfonts/The\ Jamsil\ OTF\ 1\ Thin.woff) format("woff");
+}
+@font-face {
+    font-family: Jamsil2;
+    src: url(../webfonts/The\ Jamsil\ OTF\ 2\ Light.woff) format("woff");
+}
+@font-face {
+    font-family: Jamsil3;
+    src: url(../webfonts/The\ Jamsil\ OTF\ 3\ Regular.woff) format("woff");
+}
+@font-face {
+    font-family: Jamsil5;
+    src: url(../webfonts/The\ Jamsil\ OTF\ 5\ Bold.woff) format("woff");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+body {
+    font: 16px Jamsil2;
+}
+
+#wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+.topMenu ul{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 32px;
+    margin-right: 20px;
+}
+.topMenu ul li {
+    width: 82px;
+    text-align: center;
+    margin-left: 10px;
+}
+.topMenu ul li:first-child a {
+    color: #f00;
+}
+.topMenu ul li:nth-child(2) a {
+    color: #4f4f4f;
+}
+.topMenu ul li:last-child a {
+    position: relative;
+    width: 100%;
+    height: 26px;
+    display: block;
+    top: -4px;
+    background: #f00;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #fff;
+}
+.topMenu ul li img {
+    line-height: 26px;
+    vertical-align: middle;
+    padding-left: 3px;
+    padding-bottom: 2px;
+}
+.top {
+    margin-top: 14px;
+    width: 100%;
+    display: flex;
+    height: 86px;
+    justify-content: space-between;
+}
+.top .logo {
+    width: 275px;
+}
+.top .search {
+    position: relative;
+    width: 570px;
+    height: 82px;
+    border: 3px solid #f00;
+    border-radius: 50px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top .search input {
+    width: 90%;
+    font-size: 20px;
+    padding: 5px;
+    border: none;
+}
+:focus {
+    outline: none;
+}
+/* .top .search input:hover {
+    border: none;
+} */
+.top .search img {
+    position: absolute;
+    top: 17px;
+    right: 10px;
+}
+.top .page {
+    width: 275px;
+}
+.top .page ul {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
+.top .page ul li {
+    flex: 1 1 30%;
+}
+.menu{
+    width: 100%;
+    margin-top: 73px;
+}
+.menu > ul {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    cursor: pointer;
+}
+.menu > ul > li {
+    position: relative;
+    flex: 1 1 20%;
+    font: 26px Jamsil3;
+    background: #fff;
+    height: 45px;
+    
+}
+.menu > ul > li:first-child img {
+    margin-right: 13px;
+}
+.menu > ul > li:nth-child(5) {
+    font-size: 22px;
+    padding-top: 4px;
+    box-sizing: border-box;   
+}
+.menu > ul > li .sub {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 50px;
+    overflow: hidden;
+    transition: height 0.5s;
+    background: #fff;
+    z-index: 2;
+}
+.menu > ul:hover .sub {
+    height: 395px;
+}
+.menu > ul > li a {
+    position: relative;
+}
+.menu > ul > li a::before {
+    display: inline-block;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    content: "";
+    background: #f00;
+    width: 100%;
+    height: 4px;
+    transform: scale(0);
+    transition: transform 0.5s;
+}
+.menu > ul > li:hover a::before,
+.menu > ul > li a:hover::before {
+    transform: scale(1);
+}
+.menu > ul > li .sub li {
+    position: relative;
+    width: 100%;
+    font: 20px Jamsil2;
+    color: #929292;
+    text-align: center;
+    margin: 20px 0;
+}
+.menu > ul > li .sub li::before {
+    position: absolute;
+    top: 0;
+    left: -2px;
+    width: 26px;
+    height: 26px;
+    content: "";
+    background-image: url(../images/menu_hover.png);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.menu > ul > li:nth-child(7) .sub li:nth-of-type(2):hover::before {
+    opacity: 0;
+}
+.menu > ul > li .sub li:hover {
+    color: #f00;
+}
+.menu > ul > li .sub li:hover::before {
+    opacity: 1;
+}
+.menu > ul > li ul img {
+    width: 106px;
+}
+.visual {
+    position: relative;
+    /* top: 250px;
+    left: 0; */
+    width: 100%;
+    height: 404px;
+    background: #333;
+}
+.visual .slide {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.visual .page {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 10px;
+    z-index: 1;
+}
+.visual .page .btn {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+.visual .btn li a {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #000;
+}
+.visual .btn li a:hover {
+    background: #ccc;
+}
